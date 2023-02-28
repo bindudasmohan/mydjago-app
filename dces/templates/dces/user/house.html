@@ -1,0 +1,70 @@
+{% extends "dces/user/usermaster.html" %}
+{% block content %}
+
+<form method="post" action="/house/" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+      {% if request.session.USERNAME is not None %}
+      <input type="hidden" value="{{ request.session.USERNAME }}" name="huser">
+      {% endif %}
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatinghouse" name="houseno" placeholder="Enter house.no">
+      <label for="floatinghouse">House.no</label>
+    </div>
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingarea" name="housearea" placeholder="enter your area">
+  <label for="floatingarea">Village</label>
+</div>
+     <div class="form-floating mb-3">
+      <select class="form-select" id="floatingfloor" aria-label="Floating label"  name="housefloor">
+        <option value="" selected>Choose Floor type</option>
+        <option value="Marble Category A">Marble Category A</option>
+        <option value="Marble Category B">Marble Category B</option>
+        <option value="Marble Category C">Marble Category C</option>
+        <option value="Granite Category A">Granite Category A</option>
+        <option value="Granite Category B">Granite Category B</option>
+        <option value="Granite Category C">Granite Category C</option>
+        <option value="Tile Category A">Tile Category A</option>
+        <option value="Tile Category B">Tile Category B</option>
+        <option value="Tile Category C">Tile Category C</option>
+        <option value="Other">Other</option>
+      </select>
+  <label for="floatingfloor">floor</label>
+     </div>
+    <div>
+      <div class="form-floating mb-3">
+        <select class="form-select" id="floatingSelect" aria-label="Floating label" name="houseroof">
+          <option value="" selected>Choose Roof type</option>
+          <option value="Concrete">Concrete</option>
+          <option value="Sheet">Sheet</option>
+          <option value="Oddu">Oddu</option>
+        </select>
+<label for="floatingroof">Roof type</label>
+    </div>
+     <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingstair" name="housestair" placeholder="Enter no.of staircase">
+  <label for="floatingstair">Staircase</label>
+     </div>
+    <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingdepre" name="housedepre" placeholder="Enter in Years">
+  <label for="floatingdepre">Dipreciation</label>
+     </div>
+    <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingsq" name="housesq" placeholder="Enter squarefeet">
+  <label for="floatingsq">Squarefeet</label>
+     </div>
+     <div class="mb-3">
+      <label for="formFileSm" class="form-label">House photo</label>
+      <input class="form-control form-control-sm" id="formFileSm" type="file" name="hphoto">
+    </div>
+<div class="text-center">
+                   <input type="submit" name="Submit" value="Submit" class="btn btn-info text-light">
+               </div>
+
+
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCES</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'dces/css/bootstrap.min.css' %}" type="text/css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-info">
+        <div class="container-fluid">
+          <div class="col">
+          <a class="navbar-brand" href="#">DCES</a>
+        </div>
+        <div class="col-5 ">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse float-end" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/victim/">VICTIM</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/vlogin/">Village Officer</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/mlogin/">Manager</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/adminlogin/">Admin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/events/">Event</a>
+              </li>
+            </ul>
+           
+          </div>
+        </div>
+        </div>
+      </nav>
+
+    <div class="container-fluid">
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static 'dces/img/d4.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'dces/img/maxresdefault.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'dces/img/Meulaboh_Hovercraft.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+
+    <br><br>
+    <!-- gallery -->
+    <div class="container">
+        <div class="row text-center"><h1>Gallery</h1></div>
+        <div class="row">
+          <div class="col-3">
+            <div class="card">
+              <img src="{% static 'dces/img/d5.jpg' %}" alt=""  height="200">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <img src="{% static 'dces/img/d1.jpg' %}" alt=""  height="200">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <img src="{% static 'dces/img/d2.jpg' %}" alt=""  height="200">
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card">
+              <img src="{% static 'dces/img/d3.jpg' %}" alt=""  height="200">
+            </div>
+          </div>
+        </div>
+    </div>
+
+      <br><br>
+      <div class="coonainer-fluid">
+        <div class="row">
+          <div class="col">
+            <h1 class="text-center">About</h1>
+            <p><center><b>This project is more helpful for those who are lost their wealth and family.we are giving a away to achieve their innovations from the government of kerala ,and also taken them to a new life... </b></center></p>
+
+          </div>
+          <div class="col">
+            <h1 class="text-center">Contact </h1>
+              <ol type="1">                       
+                <li>manager:8086018403</li>
+                <li>asst mngr:8086161626</li>           
+              </ol>
+          
+
+          </div>
+        </div>
+     </div>
+
+    <script src="{% static 'dces/js/bootstrap.bundle.min.js' %}"></script>
+</body>
+</html>

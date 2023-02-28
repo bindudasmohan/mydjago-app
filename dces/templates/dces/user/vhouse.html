@@ -1,0 +1,52 @@
+
+{% extends "dces/user/usermaster.html" %}
+{% block content %}
+{% load static %}
+<form method="get" action="">
+    {% csrf_token %}
+ <div>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                {% for user in users %}
+                <table class="table table-striped">
+                    <tr> <th>Application No</th> <td> {{ user.id }} </td></tr>
+                    <tr> <th>Name</th> <td> {{ user.Name }} </td></tr>
+                    <tr> <th>Address</th> <td> {{ user.Address }} </td></tr>
+                    <tr> <th>Contact No</th> <td> {{ user.Contactno }} </td></tr>
+                    <tr> <th>Email</th> <td> {{ user.Email_id }} </td></tr>
+                    <tr> <th>Aadhaar No</th> <td> {{ user.Aadhaarno }} </td></tr>
+                </table>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col">   {% for h in house %}
+            <div class="card">
+
+                 <table class="table table-striped">
+                    <tr><td colspan="2"><img src="{% static 'media/'%}{{ h.Housephoto }}" alt="" width="100%" height="350"></td></tr>
+                     <tr> <th>House No</th> <td> {{ h.Houseno }} </td></tr>
+                     <tr> <th>Area</th> <td> {{ h.Area }} </td></tr>
+                     <tr> <th>Floor</th> <td> {{ h.Floor }} </td></tr>
+                     <tr> <th>Roof</th> <td> {{ h.Roof }} </td></tr>
+                     <tr> <th>Stair Case</th> <td> {{ h.Staircase }} </td></tr>
+                     <tr> <th>Depreciation</th> <td> {{ h.Diprecition }} </td></tr>
+                     <tr> <th>Square Feet</th> <td> {{ h.Sqfeet }} </td>
+                        <tr> <th>Status</th> <td> {{ h.Status }} </td>
+
+                 </table>
+
+            </div>
+            {% endfor %}
+            <br>
+            {% for amt in Amount %}
+            <div class="card" style="padding:10px;">
+               {% if amt.Status == 'Passed' %}
+               <b class="text-danger">Amount:{{ amt.Amount }}</b>
+               {% endif %}
+            </div>
+            {% endfor %}
+             
+        </div>
+   </form>
+{% endblock %}

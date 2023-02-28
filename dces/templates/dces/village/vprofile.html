@@ -1,0 +1,30 @@
+{% extends "dces/village/vmaster.html" %}
+{% block content %}
+{% for p in Profile %}
+
+    <div class="card">
+        <div class="card-header">
+            <h1>Profile</h1>
+        </div>
+        <div class="card-body">
+       
+        <table class="table">
+            <tr><th>Name</th><td>{{ p.Name }}</td></tr>
+            <tr><th>Address</th><td>{{ p.Address }}</td></tr>
+            <tr><th>Contact No</th><td>{{ p.Contactno }}</td></tr>
+            <tr><th>Village</th><td>{{ p.Village }}</td></tr>
+            <tr><th>Block</th><td>{{ p.Block }}</td></tr>
+            <tr><th>District</th><td>{{ p.District }}</td></tr>
+            <tr><th>User ID</th><td>{{ p.User_id }}</td></tr>
+            <tr><th>Email ID</th><td>{{ p.Email_id }}</td></tr>
+        </table>
+      <br>
+        
+        <a href="/veditprofile/{{ p.Officer_id }}" class="btn btn-success">Edit</a>
+        <a href="/vchngpwd/{{ p.Officer_id }}" class="btn btn-success">Change password</a>
+
+    </div>
+    </div>
+</form>  
+{% endfor %}
+{% endblock %}

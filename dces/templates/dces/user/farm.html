@@ -1,0 +1,41 @@
+{% extends "dces/user/usermaster.html" %}
+{% block content %}
+
+<form method="post" action="/farm/" enctype="multipart/form-data">
+    {% csrf_token %}
+     <div>
+    {% if request.session.USERNAME is not None %}
+    <input type="hidden" value="{{ request.session.USERNAME }}" name="huser">
+    {% endif %}
+           <div class="form-floating mb-3">
+  <input type="text" class="form-control" name="farmno" id="floatingnocd" placeholder="enter your area">
+  <label for="floatingarea">Farm No</label>
+</div>
+     <div class="form-floating mb-3">
+  <input type="text" class="form-control" name="farmarea" id="floatingarea" placeholder="enter your area">
+  <label for="floatingarea">Area</label>
+</div>
+     <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatinganimalfood" name="farmanimalfood" placeholder="enter food of animal">
+  <label for="floatinganimal">Animal Food</label>
+     </div>
+     <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatinganimal" name="farmanimal" placeholder="enter name of animal">
+  <label for="floatinganimal">Animal Name</label>
+     </div>
+          <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingnum" name="farmnum" placeholder="enter no.of animal">
+  <label for="floatingnum">No.of Animal</label>
+    </div>
+    <div class="mb-3">
+      <label for="formFileSm" class="form-label">Photo</label>
+      <input class="form-control form-control-sm" id="formFileSm" type="file" name="fphoto">
+    </div>
+    <div class="text-center">
+                   <input type="SUBMIT" name="Submit" value="SUBMIT" class="btn btn-info text-light">
+               </div>
+
+
+    </form>
+
+{% endblock %}

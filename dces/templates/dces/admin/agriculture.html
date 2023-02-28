@@ -1,0 +1,55 @@
+
+{% extends "dces/admin/adminmaster.html"%}
+{% block content %}
+{% load static %}
+{% for h in agri %}
+<form method="post" action="">
+    {% csrf_token %}
+
+    <div class="row">
+        <div class="col">
+            <img src="{% static 'media/'%}{{ h.Agriphoto }}" alt="" width="100%" height="250"/>
+            <div class="card">
+                {% for user in users %}
+                <table class="table table-striped">
+                    <tr> <th>Application No</th> <td> {{ user.id }} </td></tr>
+                    <tr> <th>Name</th> <td> {{ user.Name }} </td></tr>
+                    <tr> <th>Address</th> <td> {{ user.Address }} </td></tr>
+                    <tr> <th>Contact No</th> <td> {{ user.Contactno }} </td></tr>
+                    <tr> <th>Email</th> <td> {{ user.Email_id }} </td></tr>
+                    <tr> <th>Aadhaar No</th> <td> {{ user.Aadhaarno }} </td></tr>
+                </table>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+               
+                 <table class="table table-striped">
+                     <tr> <th>Id No</th> <td> {{ h.id }} </td></tr>
+                     <tr> <th>Area</th> <td> {{ h.Area }} </td></tr>
+                     <tr> <th>Product Name</th> <td> {{ h.Productname }} </td></tr>
+                     <tr> <th>Quantity</th> <td> {{ h.Quantity }} </td></tr>
+                     <tr> <th>Status</th> <td> {{ h.Status }} </td></tr>
+                     
+                 </table>
+                
+            </div>
+            <br>
+            {% for Amt in Amount %}
+           
+              <h1>  Amount:{{ Amt.Amount }}</h1><br>
+                Status:{{ Amt.Status }}
+            {% endfor %}
+            <br> 
+          
+            
+        </div>
+            </div>
+        </div>
+</form>
+{% endfor %}
+{% endblock %}
+            
+
+

@@ -1,0 +1,63 @@
+{% extends "dces/village/vmaster.html" %}
+{% block content %}
+<form method="post" action="/veditprofile/{{ Profile.Officer_id }}">
+      {% csrf_token %}
+      <div class="card">
+        <div class="card-header">
+            <h1>Profile update Officer Id:{{ Profile.Officer_id }} </h1>
+        </div>
+        <div class="card-body">
+     <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatinghouse" name="txtName" placeholder="Name" value="{{Profile.Name}}" >
+  <label for="floatinghouse">Name</label>
+</div>
+   <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingad" name="txtAddress" placeholder="Address" value="{{ Profile.Address }}">
+  <label for="floatinghouse">Address</label>
+</div>
+   <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingcon"  name="txtcontact" placeholder="Enter Contact no" value="{{ Profile.Contactno }}">
+  <label for="floatinghouse">Contact.no</label>
+</div>
+     
+    
+
+    <div>
+        <div class="form-floating">
+            <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="txtDistrict" >
+<option value="{{ Profile.District }}">{{ Profile.District }}</option>
+  <option value="Kasargod">Kasargod</option>
+  <option value="Kannur">Kannur</option>
+  <option value="Wayanad">Wayanad</option>
+  <option value="Kozhikode">Kozhikode</option>
+  <option value="Malappuram">Malappuram</option>
+  <option value="Palakkad">Palakkad</option>
+  <option value="Thrissur">Thrissur</option>
+  <option value="Ernankulam">Ernankulam</option>
+  <option value="Alappuzha">Alappuzha</option>
+  <option value="Idukki">Idukki</option>
+  <option value="Pathanamthitta">Pathanamthitta</option>
+    <option value="Kollam">Kollam</option>
+        <option value="Kottayam">Kottayam</option>
+        <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+   </select>     <label for="floatingSelect">District</label>
+
+    </div>
+     <div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingemail" placeholder="EnterEmail" name="txtEmail" value="{{ Profile.Email_id}}">
+  <label for="floatinghouse">Email Address</label>
+</div>
+    
+      
+   
+    <div class="text-center">
+                   <input type="submit" name="Submit" value="Save Chanages" class="btn btn-success text-light">
+               </div>
+</div>
+</div>
+
+
+
+</form>
+
+{% endblock %}

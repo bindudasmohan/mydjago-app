@@ -1,0 +1,33 @@
+
+{% extends "dces/user/usermaster.html" %}
+{% block content %}
+
+<form method="post" action="/userchgpwd/">
+    {% csrf_token %}
+    <div class="card">
+        <div class="card-header">
+            <h4>Change Password</h4>
+        </div>
+        <div class="card-body">
+    
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInputGroup1" name="Username" placeholder="Username" value="{{ Profile.User_id }}">
+                <label for="floatingInputGroup1">USER ID</label>
+            </div>
+            <br>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" name="Password" placeholder="Password">
+                    <label for="floatingPassword">PASSWORD</label>
+                </div>
+                <br>
+                    <div class="form-floating">
+                        <input type="password" class="form-control" id="floatingPassword" name="ConfirmPassword" placeholder="Password">
+                        <label for="floatingPassword">CONFIRM PASSWORD</label>
+                    </div><br>
+                    <label class="text-danger">{{ Error }}</label>
+                    <br>
+                        <button type="submit" class="btn btn-outline-info">Save Changes</button>
+</form>
+</div>
+</div>
+{% endblock %}

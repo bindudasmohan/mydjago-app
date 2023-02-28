@@ -1,0 +1,32 @@
+{% extends "dces/village/vmaster.html" %}
+{% block content %}
+<form method="post" action="/veventadd/">
+    {% csrf_token %}
+    <div class="card">
+        <div class="card-header bg-success">
+            <h2 class="card-title text-light">Event</h2>
+        </div>
+        <div class="card-body">
+    
+    <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInput" name="txtName" placeholder="name">
+        <label for="floatingInput">Name</label>
+    </div><br>
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="descriptions" id="floatingTextarea" name="txtDesc" style="resize: none;"></textarea>
+        <label for="floatingTextarea">Descriptions</label>
+    </div><br>
+    <button type="submit" class="btn btn-info float-end">Send</button>
+</form>
+</div>    </div>
+<br>
+<table class="table table-striped">
+      
+    {% for e in events %}
+    <tr>
+        <td><h5>{{e.Eventname}}</h5><blockquote>{{e.Description}}</blockquote></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

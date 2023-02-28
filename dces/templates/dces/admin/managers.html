@@ -1,0 +1,15 @@
+{% extends "dces/admin/adminmaster.html" %}
+{% block content %}
+
+<h1>Disaster Manager</h1>
+<table class="table">
+    <thead class="table-primary">
+    <tr><th>Name</th><th>Address</th><th>District</th><th>Mobno</th><th>Email_id</th><th></th></tr>
+    </thead>
+    {% for mgr in Managers %}
+    <tr><td>{{ mgr.Name }}</td><td>{{ mgr.Address }}</td><td>{{ mgr.District }}</td><td>{{ mgr.Mobno }}</td><td>{{ mgr.Email_id }}</td>
+        <td><a href="/delManager/{{ mgr.user_id }}">Delete</a></td></tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

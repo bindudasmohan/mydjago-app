@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/userreg/">
+    {% csrf_token %}
+  <div class="row justify-content-center">
+    <div class="col-6">
+   <div class="form-floating mb-3">
+  <input type="text" class="form-control" name="name" id="floatinghouse" placeholder="">
+  <label for="floatinghouse">Name</label>
+</div>
+   <div class="form-floating mb-3">
+  <input type="text" class="form-control" name="address" id="floatingad" placeholder="">
+  <label for="floatinghouse">Address</label>
+</div>
+   <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingcon"name="usecontact" placeholder="">
+  <label for="floatinghouse">Contact No</label>
+</div>
+   <div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingemail" name="useemail" placeholder="">
+  <label for="floatinghouse">Email Address</label>
+</div>
+   <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingadhar"  name="useadhar" placeholder="">
+  <label for="floatinghouse">Adhar.no</label>
+</div>
+   <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingvill" name="usevillage" placeholder="">
+  <label for="floatinghouse">Village</label>
+</div>
+   <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatinguser" name="useuser" placeholder="">
+  <label for="floatinghouse">User Name</label>
+</div>
+<div class="text-danger">{{ error }}</div>
+   <div class="form-floating mb-3">
+  <input type="Password" class="form-control" id="floatingpwd" name="usepwd" placeholder="">
+  <label for="floatinghouse">Password</label>
+</div>
+<div class="text-center">
+                   <input type="submit" name="Submit" value="REGISTER" class="btn btn-info text-light">
+               </div>
+
+  </div>
+</div>
+</form>
+
+</body>
+</html>

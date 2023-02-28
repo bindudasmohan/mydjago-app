@@ -1,0 +1,15 @@
+{% extends "dces/admin/adminmaster.html" %}
+{% block content %}
+
+<h1>Applicants</h1>
+<table class="table">
+    <thead class="table-primary">
+    <tr><th>Application No</th><th>Name</th><th>Address</th><th>Contactno</th><th>Email_id</th><th>Aadhar No</th><th>Village</th><th></th></tr>
+    </thead>
+    {% for app in Applicants %}
+    <tr><td>{{ app.id }}</td><td>{{ app.Name }}</td><td>{{ app.Address }}</td><td>{{ app.Contactno }}</td><td>{{ app.Email_id }}</td><td>{{ app.Aadhaarno }}</td><td>{{ app.Village }}</td>
+    <td><a href="/delApplicant/{{ app.id }}">Delete</a></td></tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

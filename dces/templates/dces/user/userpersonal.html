@@ -1,0 +1,48 @@
+{% extends "dces/user/usermaster.html" %}
+{% block content %}
+
+<form method="post" action="/userpers/">
+    {% csrf_token %}
+<div>
+    {% if request.session.USERNAME is not None %}
+    <input type="hidden" value="{{ request.session.USERNAME }}" name="huser">
+    {% endif %}
+</div>
+   <!-- <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatinguser" name="userusename" placeholder="Enter affected area">
+  <label for="floatingaffected">user name</label>
+</div> -->
+  <!-- <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingaffected" name="affectarea" placeholder="Enter affected area">
+  <label for="floatingaffected">Affected Area</label>
+</div>
+    <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingvill" name="village" placeholder="Enter village">
+  <label for="floatingvill">Village</label>
+</div> -->
+    <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingtaluk" name="taluk" placeholder="Enter taluk">
+  <label for="floatingtaluk">Taluk</label>
+</div>
+    <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingsurv" name="survey" placeholder="Enter survey.no">
+  <label for="floatingsurv">Survey.no</label>
+</div>
+    <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingbnkacc" name="accno" placeholder="Enter acc.no">
+  <label for="floatingbnkacc">Account.no</label>
+</div>
+    <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingbran" name="bnkname" placeholder="Enter Bank name">
+  <label for="floatingbran">Bank name</label>
+</div>
+    <div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatinghouse" name="bnkbranch" placeholder="Enter Bank branch">
+  <label for="floatinghouse">Bank Branch</label>
+</div>
+   <div class="text-center">
+                   <input type="submit" name="Submit" value="REGISTER" class="btn btn-info text-light">
+               </div>
+</form>
+
+{% endblock %}

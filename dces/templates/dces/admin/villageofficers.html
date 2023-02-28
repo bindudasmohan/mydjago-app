@@ -1,0 +1,15 @@
+{% extends "dces/admin/adminmaster.html" %}
+{% block content %}
+
+<h1>Village Officers</h1>
+<table class="table">
+    <thead class="table-primary">
+    <tr><th>Officer ID</th><th>Name</th><th>Address</th><th>Contactno</th><th>Village</th><th>Block</th><th>District</th><th>Email_id</th><th></th></tr>
+    </thead>
+    {% for vlg in VillageOfficer %}
+    <tr><td>{{ vlg.Officer_id }}</td><td>{{ vlg.Name }}</td><td>{{ vlg.Address }}</td><td>{{ vlg.Contactno }}</td><td>{{ vlg.Village }}</td><td>{{ vlg.Block }}</td><td>{{ vlg.District }}</td><td>{{ vlg.Email_id }}</td>
+    <td><a href="/delOfficer/{{ vlg.Officer_id }}">Delete</a></td></tr>
+    {% endfor %}
+</table>
+<a href="https://api.whatsapp.com/send?phone={{ vlg.Contactno }}&text=hi"></a>
+{% endblock %}

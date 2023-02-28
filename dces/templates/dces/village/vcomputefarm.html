@@ -1,0 +1,53 @@
+{% extends "dces/village/vmaster.html" %}
+{% block content %}
+{% load static %}
+{% for f in farm %}
+<form method="post" action="/fcompute/{{f.Farmno}}">
+    {% csrf_token %}
+
+    <div class="row">
+        <div class="col">
+            <img src="{% static 'media/'%}{{ f.Farmphoto }}" alt="" width="100%" height="250"/>
+            <div class="card">
+                {% for user in users %}
+                <table class="table table-striped">
+                    <tr> <th>Application No</th> <td> {{ user.id }} </td></tr>
+                    <tr> <th>Name</th> <td> {{ user.Name }} </td></tr>
+                    <tr> <th>Address</th> <td> {{ user.Address }} </td></tr>
+                    <tr> <th>Contact No</th> <td> {{ user.Contactno }} </td></tr>
+                    <tr> <th>Email</th> <td> {{ user.Email_id }} </td></tr>
+                    <tr> <th>Aadhaar No</th> <td> {{ user.Aadhaarno }} </td></tr>
+                </table>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+               
+                 <table class="table table-striped">
+                     <tr> <th>Farm No</th> <td> {{ f.Farmno }} </td></tr>
+                     <tr> <th>Area</th> <td> {{ f.Area }} </td></tr>
+                     <tr> <th>Animal Name</th> <td> {{ f.Animalname }} </td></tr>
+                     <tr> <th>Animal Food</th> <td> {{ f.Animalfood }} </td></tr>
+                     <tr> <th>Number of Animal</th> <td> {{ f.Numofanimal }} </td></tr>               
+                 </table>
+                
+            </div>
+            <br>
+            {% for Amt in Amount %}
+           
+              <h1>  Amount:{{ Amt.Amount }}</h1><br>
+                Status:{{ Amt.Status }}
+            {% endfor %}
+            <br> 
+          
+            {% if not Amount %}
+            <button type="submit" class="btn btn-outline-success"> Compute </button>
+            {% endif %}
+            </div>
+        
+            
+        </div>
+</form>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "dces/village/vmaster.html" %}
+{% block content %}
+    <center><h1>Application Form</h1></center>
+<h3>HOUSE</h3>
+<table class="table table-striped table-warning">
+    <tr><th>Application No</th>
+    <th>Affected Area</th>
+        <th>House No</th><th></th></tr>
+    {% for h in house %}
+    <tr>
+        <td>{{h.Applicationno_id}}</td>
+         <td>{{h.Area}}</td>
+         <td>{{h.Houseno}}</td>
+        <td><a href="/vviewHouse/{{h.Houseno}}">view</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>FARM</h3>
+<table class="table table-striped table-warning">
+    <tr><th>Application No</th>
+    <th>Affected Area</th>
+        <th>Farm No</th><th></th></tr>
+    {% for h in farm %}
+    <tr>
+        <td>{{h.Applicationno_id}}</td>
+         <td>{{h.Area}}</td>
+         <td>{{h.Farmno}}</td>
+        <td><a href="/vviewFarm/{{h.Farmno}}">view</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h3>AGRICULTURE</h3>
+<table class="table table-striped table-warning">
+    <tr><th>Application No</th>
+    <th>Affected Area</th>
+        <th> Id No</th><th></th></tr>
+    {% for h in agri %}
+    <tr>
+        <td>{{h.Appno_id}}</td>
+        <td>{{h.Area}}</td>
+        <td>{{h.id}}</td>
+        <td><a href="/vviewAgri/{{h.id}}">view</a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

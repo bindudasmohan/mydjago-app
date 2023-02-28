@@ -1,0 +1,15 @@
+{% extends "dces/user/usermaster.html" %}
+{% block content %}
+
+
+<br>
+<table class="table table-striped">
+      
+    {% for e in events %}
+    <tr>
+        <td><h5>{{e.Eventname}}</h5><blockquote>{{e.Description}}</blockquote></td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

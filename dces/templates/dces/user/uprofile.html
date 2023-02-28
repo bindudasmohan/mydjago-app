@@ -1,0 +1,43 @@
+{% extends "dces/user/usermaster.html" %}
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        <h1 class="card-title">Profile</h1>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <table class="table table-borderless">
+                  
+                    {% for p in Profile %}
+                        <tr><th>Name</th><td>{{ p.Name }}</td></tr>
+                        <tr><th>Address</th><td>{{ p.Address }}</td></tr>
+                        <tr><th>Contactno</th><td>{{ p.Contactno }}</td></tr>
+                        <tr><th>Email ID</th><td>{{ p.Email_id }}</td></tr>
+                        <tr><th>Aadhar No</th><td>{{ p.Aadhaarno }}</td></tr>
+                        <tr><th>Village</th><td>{{ p.Village }}</td></tr>
+        
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="col">
+                <table class="table table-borderless">
+                    {% for p in Personal %}
+                        <tr><th>Taluk </th><td>{{ p.Taluk }}</td></tr>
+                        <tr><th>Surveyno</th><td>{{ p.Surveyno }}</td></tr>
+                        <tr><th>Bankname</th><td>{{ p.Bankname }}</td></tr>
+                        <tr><th>Bankbranch</th><td>{{ p.Bankbranch }}</td></tr>
+                        <tr><th>Account No</th><td>{{ p.Accno }}</td></tr>
+            
+        
+                    {% endfor %}
+                </table>
+            </div>
+
+        </div>
+       
+    </div>
+</div>
+
+{% endblock %}

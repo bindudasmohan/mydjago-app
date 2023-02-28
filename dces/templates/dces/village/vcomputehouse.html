@@ -1,0 +1,54 @@
+{% extends "dces/village/vmaster.html" %}
+{% block content %}
+{% load static %}
+{% for h in house %}
+<form method="post" action="/hcompute/{{h.Houseno}}">
+    {% csrf_token %}
+
+    <div class="row">
+        <div class="col">
+            <img src="{% static 'media/'%}{{ h.Housephoto }}" alt="" width="100%" height="250"/>
+            <div class="card">
+                {% for user in users %}
+                <table class="table table-striped">
+                    <tr> <th>Application No</th> <td> {{ user.id }} </td></tr>
+                    <tr> <th>Name</th> <td> {{ user.Name }} </td></tr>
+                    <tr> <th>Address</th> <td> {{ user.Address }} </td></tr>
+                    <tr> <th>Contact No</th> <td> {{ user.Contactno }} </td></tr>
+                    <tr> <th>Email</th> <td> {{ user.Email_id }} </td></tr>
+                    <tr> <th>Aadhaar No</th> <td> {{ user.Aadhaarno }} </td></tr>
+                </table>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+               
+                 <table class="table table-striped">
+                     <tr> <th>House No</th> <td> {{ h.Houseno }} </td></tr>
+                     <tr> <th>Area</th> <td> {{ h.Area }} </td></tr>
+                     <tr> <th>Floor</th> <td> {{ h.Floor }} </td></tr>
+                     <tr> <th>Roof</th> <td> {{ h.Roof }} </td></tr>
+                     <tr> <th>Stair Case</th> <td> {{ h.Staircase }} </td></tr>
+                     <tr> <th>Depreciation</th> <td> {{ h.Diprecition }} </td></tr>
+                     <tr> <th>Square Feet</th> <td> {{ h.Sqfeet }} </td></tr>
+                   
+                 </table>
+             
+            </div>
+            <br>
+            {% for Amt in Amount %}
+           
+              <h1>  Amount:{{ Amt.Amount }}</h1><br>
+                Status:{{ Amt.Status }}
+            {% endfor %}
+            <br>   
+            {% if not Amount %}
+            <button type="submit" class="btn btn-outline-success"> Compute </button>
+            {% endif %}
+            </div>
+        
+        </div>
+</form>
+{% endfor %}
+{% endblock %}
